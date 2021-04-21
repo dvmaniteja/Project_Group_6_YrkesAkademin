@@ -1,7 +1,4 @@
 pipeline {
-    tools {
-        maven 'apache-maven-3.0.1' 
-    }
     agent { label 'jenkinsagent' }
     stages {
         stage('SCM Checkout') {
