@@ -4,7 +4,9 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ab4d2a98-78f3-4f7a-898c-354e4efda790', url: 'https://github.com/dvmaniteja/hello_world_sample.git']]]
+                withMaven {
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                }
             }
         }
     }
