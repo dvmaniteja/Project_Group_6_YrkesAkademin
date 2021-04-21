@@ -10,6 +10,12 @@ pipeline {
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
                 }
             }
+        },
+        stage('Creating the Docer Image') {
+            steps {
+                 sh 'python --version'
+                }
+            }
         }
     }
 }
