@@ -12,8 +12,10 @@ pipeline {
             }
         }
         stage('Creating the Docer Image') {
+           agent {
+                docker {image 'centos:latest'}  
             steps {
-                 sh 'python --version'
+                 sh 'uname -a '
                 }
             }
         }
