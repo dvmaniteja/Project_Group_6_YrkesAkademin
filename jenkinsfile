@@ -13,11 +13,9 @@ pipeline {
             }
         }
         stage('Creating the Docer Image') {
-           agent {
-                label 'docker-agent' {image 'centos:latest'}  
-            }
+           agent {label 'docker-agent' }
             steps {
-                 sh 'uname -a '
+                 docker pull centos:latest
                 }
         }	
    }
