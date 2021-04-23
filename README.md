@@ -3,7 +3,7 @@
 
 The aim of this project is to create a CI/CD pipeline for a MAVEN based project. This project gives us an opportunity to learn how to create a CI/CD pipeline to automate DevOps flow through various open-source DevOps Tools available in todays' market.
 ### ARCHITECTURE
-![Architecture](images/arch_image.jpeg)
+![Architecture](images/arch_image.JPG)
 
 ### TOOLS USED IN THE PROJECT
 
