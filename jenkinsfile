@@ -32,13 +32,13 @@ pipeline {
        stage('Pushing the docker image') {
             agent {label 'jenkins-slave'}
             steps {
-             sh 'docker login -u eshikav -p Shiv@1991'
-             sh 'docker tag ${JOB_NAME}-tomcat:${BUILD_NUMBER} eshikav/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
-             sh 'docker push eshikav/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
+             sh 'docker login -u manidockerexpert -p Mani_1234'
+             sh 'docker tag ${JOB_NAME}-tomcat:${BUILD_NUMBER} manidockerexpert/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
+             sh 'docker push manidockerexpert/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
            }
            post {
               always {
-                sh 'docker image rm -f eshikav/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
+                sh 'docker image rm -f manidockerexpert/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
               }
            }
        }
