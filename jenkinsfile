@@ -3,7 +3,7 @@ pipeline {
     triggers { upstream(upstreamProjects: 'docker-agent', threshold: hudson.model.Result.SUCCESS) }
     stages {
        stage('Build') {
-            agent {label 'jenkinsagent'}   
+            agent {label 'jenkins-master'}   
             steps {
                 checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '37c249a6-5a23-4b15-a241-044cbe28d7e0', url: 'git@github.com:dvmaniteja/hello_world_sample.git']]]
                 withMaven (maven: 'M2_HOME') {
@@ -19,10 +19,7 @@ pipeline {
        }  
 
        stage('Build docker image') {
-           environment {
-                DOCKER_HOST = "tcp://172.31.35.134:2375"
-           }
-           agent {label 'dcoker-agent'}
+           agent {label 'jenkins-slave'}
            steps {
              copyArtifacts filter: 'test.zip', fingerprintArtifacts: true, projectName: '${JOB_NAME}', selector: specific('${BUILD_NUMBER}')
              unzip zipFile: 'test.zip', dir: './webapp'
@@ -33,10 +30,7 @@ pipeline {
        }
 
        stage('Pushing the docker image') {
-            environment {
-                DOCKER_HOST = "tcp://172.31.35.134:2375"
-           }
-            agent {label 'dcoker-agent'}
+            agent {label 'jenkins-slave'}
             steps {
              sh 'docker login -u eshikav -p Shiv@1991'
              sh 'docker tag ${JOB_NAME}-tomcat:${BUILD_NUMBER} eshikav/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
