@@ -16,14 +16,4 @@ The aim of this project is to create a CI/CD pipeline for a MAVEN based project.
 | Docker hub | Registery for container images|https://hub.docker.com/|
 | AWS | For infrastructure| https://aws.amazon.com/ec2/|
 
-### PLUG-IN'S USED IN JENKINS
-
-| PLUG-IN | DESCRIPTION|
-| ------ | ------ |
-| Github | Source code management| 
-| Jenkins| For Continuous Integration|
-| MAVEN | Build Tool|
-| Docker | For hosting containers|
-| Docker hub | Registery for container images|
-| AWS | For infrastructure| 
 
