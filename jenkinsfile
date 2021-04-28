@@ -42,5 +42,15 @@ pipeline {
               }
            }
        }
+
+       stage('Deploying the docker image') {
+            agent {label 'jenkins-slave'}
+            steps {
+             sh 'docker login -u manidockerexpert -p Mani_1234'
+             sh 'docker rm -f ${JOB_NAME}-tomcat'
+             sh 'docker run -d -p 8080:8080 --name ${JOB_NAME}-tomcat  manidockerexpert/${JOB_NAME}-tomcat:${BUILD_NUMBER}'
+           }
+       }
+
   }
 }
