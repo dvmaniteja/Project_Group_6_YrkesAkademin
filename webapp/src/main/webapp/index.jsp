@@ -4,4 +4,4 @@
 <h2> Kisanet Ghebremicael </h2>
 <h2> Bengt Svedling </h2>
 <h2> Yasir Hussain </h2>
-<h2> Maniteja Darisipudi </h2>
+<h2> Mani Darisipudi </h2>
