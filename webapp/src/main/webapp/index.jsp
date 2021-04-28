@@ -3,7 +3,4 @@
 
 <h1> PROJECT GROUP MEMBERS  </h1>
 <h2> Created by pipeline job in Jenkins </h2>
-<h2> Kisanet Ghebremicael </h2>
-<h2> Bengt Svedling </h2>
-<h2> Yasir Hussain </h2>
-<h2> Maniteja Darisipudi </h2>
+<h2> Mani</h2>
